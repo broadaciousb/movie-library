@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  transition: all 300ms ease;
 }
 
 a {
@@ -30,6 +31,10 @@ a {
 .fa-video {
   color: #FB6542;
   margin-right: 6px;
+}
+
+.button__hover-effect:hover {
+  background-color: #FB6542;
 }
 
 
@@ -122,15 +127,15 @@ header {
 
 .header__title {
   font-size: 50px;
-  margin: 36px 0;
 }
 
 .header__sub-title {
   font-size: 30px;
+  margin-top: 32px;
+  margin-bottom: 20px;
 }
 
 .input__wrapper {
-  margin-top: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,7 +173,7 @@ header {
   justify-content: center;
   align-items: center;
   width: 50%;
-  margin-top: 48px;
+  margin-top: 36px;
 }
 
 .header__img {
