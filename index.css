@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 24px;
+}
+
+.deep-blue {
+  color: #375E97;
+}
+
+.orange-red {
+  color: #FB6542;
+}
+
+.yellow-orange {
+  color: #FFBB00;
+}
+
+.fa-video {
+  color: #FB6542;
+  margin-right: 6px;
+}
+
+
+
+
+
+
+
+
+
+/*
+
+HOME PAGE
+
+*/
+
+#home-page {
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 96px;
+}
+
+.nav__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.nav__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #375E97;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__link {
+  margin: 0 12px;
+  font-size: 18px;
+  color: #242424;
+  font-weight: 700;
+}
+
+.nav__contact {
+  margin-left: 24px;
+  background-color: #375E97;
+  padding: 12px 40px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+
+/*
+
+HEADER
+
+*/
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.header__title {
+  font-size: 50px;
+  margin: 36px 0;
+}
+
+.header__sub-title {
+  font-size: 30px;
+}
+
+.input__wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.search__input {
+  margin-right: 24px;
+  padding: 12px 24px;
+  border-radius: 16px;
+  border-color: #375E97;
+  font-size: 24px;
+  width: 100%;
+  max-width: 600px;
+  height: 70px;
+}
+
+.search__btn {
+  width: 200px;
+  height: 70px;
+  border: none;
+  border-radius: 20px;
+  background-color: #375E97;
+}
+
+.fa-magnifying-glass {
+  color: white;
+  font-size: 40px;
+}
+
+
+.header__img--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin-top: 48px;
+}
+
+.header__img {
+  width: 100%;
+}
+
+
