@@ -33,16 +33,8 @@ a {
   margin-right: 6px;
 }
 
-.button__hover-effect:hover {
-  background-color: #FB6542;
-}
-
 .link__hover-effect {
   position: relative;
-}
-
-.link__hover-effect:hover {
-  color: #375E97;
 }
 
 .link__hover-effect:after {
@@ -59,6 +51,10 @@ a {
 .link__hover-effect:hover:after {
   width: 100%;
   left: 0;
+}
+
+.link__hover-effect--white:after {
+  background-color: white;
 }
 
 
@@ -84,6 +80,7 @@ nav {
   justify-content: center;
   align-items: center;
   height: 96px;
+  margin: 0 24px;
 }
 
 .nav__content-wrapper {
@@ -93,13 +90,21 @@ nav {
   max-width: 1100px;
 }
 
-.nav__logo {
+.nav__logo,
+.nav__logo--white {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #375E97;
   font-weight: 700;
   font-size: 32px;
+}
+
+.nav__logo {
+  color: #375E97;
+}
+
+.nav__logo--white {
+  color: white;
 }
 
 .nav__links {
@@ -108,21 +113,51 @@ nav {
   align-items: center;
 }
 
-.nav__link {
+.nav__link,
+.nav__link--white {
   margin: 0 12px;
   font-size: 18px;
-  color: #242424;
   font-weight: 700;
 }
 
-.nav__contact {
+.nav__link {
+  color: #242424;
+}
+
+.nav__link:hover {
+  color: #375E97;
+}
+
+.nav__link--white {
+  color: white;
+}
+
+.nav__contact,
+.nav__contact--white {
   margin-left: 24px;
-  background-color: #375E97;
   padding: 12px 40px;
   border-radius: 50px;
-  color: white;
   font-weight: 700;
   font-size: 18px;
+}
+
+.nav__contact {
+  background-color: #375E97;
+  color: white;
+}
+
+.nav__contact:hover {
+  background-color: #FB6542;
+}
+
+.nav__contact--white {
+  background-color: white;
+  color: #375E97;
+}
+
+.nav__contact--white:hover {
+  background-color: #FFBB00;
+  color: white;
 }
 
 
@@ -186,7 +221,7 @@ header {
   background-color: #375E97;
 }
 
-.fa-magnifying-glass {
+.home__search--icon {
   color: white;
   font-size: 40px;
 }
@@ -205,3 +240,79 @@ header {
 }
 
 
+
+
+/*     FIND MOVIES         */
+
+
+.search__header {
+  position: relative;
+}
+
+.header__background {
+  background-image: url(./assets/StockCake-Cinema\ Sunset\ Scene_1729648570.jpg);
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.header__background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#375E97;
+  opacity: 0.7;
+}
+
+.search__header--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.serach__header--title {
+  color: white;
+  font-size: 45px;
+  margin: 32px 0;
+}
+
+.search__header-input--wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 56px;
+}
+
+.search__header-input {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  padding-left: 20px;
+  border: none;
+}
+
+.find__movies-search--icon {
+  position: absolute;
+  right: 20px;
+  font-size: 32px;
+  color: #375E97;
+}
+
+.find__movies-search--icon:hover {
+  color:#FFBB00;
+}
