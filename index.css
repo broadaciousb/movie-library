@@ -221,6 +221,10 @@ header {
   background-color: #375E97;
 }
 
+.search__btn:hover {
+  background-color: #FB6542;;
+}
+
 .home__search--icon {
   color: white;
   font-size: 40px;
@@ -243,6 +247,9 @@ header {
 
 
 /*     FIND MOVIES         */
+
+
+/* SEARCH HEADER */
 
 
 .search__header {
@@ -315,4 +322,39 @@ header {
 
 .find__movies-search--icon:hover {
   color:#FFBB00;
+}
+
+
+/* SEARCH CONTAINER */
+
+.loading__bar {
+  width: 100%;
+  height: 5px;
+  background-color: #375E97;
+  opacity: 0.5;
+}
+
+.search__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.filter__row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: 36px 0;
+}
+
+.drop-down__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie__filter {
+  width: 100%;
 }
