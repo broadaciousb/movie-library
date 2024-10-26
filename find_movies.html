@@ -51,12 +51,23 @@
     <div class="loading__bar"></div>
     <div class="container search__container">
       <div class="filter__row">
-        <h3 class="filter__title">Movie Filter</h3>
+        <h3 class="filter__title">Movie Results</h3>
         <div class="drop-down__wrapper">
-          <label for="movies">Filter Results</label>
-          <select name="movies" id="movies" class="movie__filter"></select>
+          <label for="movies" class="drop-down__caption">Filter Results</label>
+          <select name="movies" id="movies" class="movie__filter">
+            <option class="filter__option" value="all">All</option>
+            <option class="filter__option" value="comedy">Comedy</option>
+            <option class="filter__option" value="action">Action</option>
+            <option class="filter__option" value="drama">Drama</option>
+          </select>
         </div>
       </div>
+    </div>
+    <div class="loading__bar"></div>
+  </section>
+  <section id="movie__results">
+    <div class="result__row">
+      
     </div>
   </section>
 </body>

@@ -344,8 +344,9 @@ header {
 .filter__row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin: 36px 0;
 }
 
@@ -358,3 +359,36 @@ header {
 .movie__filter {
   width: 100%;
 }
+
+.filter__title {
+  font-size: 32px;
+  color: #375E97;
+  font-weight: 700;
+}
+
+.drop-down__caption {
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: #375E97;
+}
+
+.movie__filter {
+  font-size: 16px;
+  height: 32px;
+  border: 3px solid #375E97;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.movie__filter:hover {
+  border-color: #FB6542;
+}
+
+.option {
+  border-color: #375E97;
+}
+
+.option:hover {
+  border-color: #FB6542;
+}
+
