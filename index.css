@@ -404,7 +404,7 @@ MOVIE RESULTS
   margin: 24px 0;
 }
 
-.movies {
+.movie__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
