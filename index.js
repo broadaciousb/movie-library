@@ -4,7 +4,7 @@
 const movieListEl = document.querySelector(".movie__list");
 
 async function main() {
-  const movies = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=f54b9d83");
+  const movies = await fetch("https://www.omdbapi.com/?&i=tt3896198&apikey=f54b9d83&s='fast'");
   const moviesData = await movies.json();
   console.log(moviesData);
   movieListEl.innerHTML = moviesData.map((movie) => movieHTML(movie)).join("");
@@ -19,7 +19,6 @@ function movieHTML(movie) {
                 <img src="${movie.Poster}" alt="" class="movie__img">
               </div>
               <h3 class="movie__title">${movie.Title}</h3>
-              <div class="movie__release-date">${movie.Year}</div>
             </div>
           </div>`;
 }
