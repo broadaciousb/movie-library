@@ -409,9 +409,19 @@ MOVIE RESULTS
 
 .movie__list {
   display: flex;
-  
   align-items: flex-start;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.too-many-results,
+.movie-not-found {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 24px;
+  font-size: 32px;
 }
 
 .movie__wrapper {

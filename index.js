@@ -53,6 +53,8 @@ async function main(API) {
 search();
 
 
+
+
 function movieHTML(movie) {
   return `<div class="movie__wrapper">
             <div class="movie">
