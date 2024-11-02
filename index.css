@@ -317,10 +317,13 @@ header {
   position: absolute;
   right: 20px;
   font-size: 32px;
-  color: #375E97;
 }
 
-.find__movies-search--icon:hover {
+.search__button {
+  color: #375E97
+}
+
+.search__button:hover {
   color:#FFBB00;
 }
 
@@ -401,18 +404,19 @@ MOVIE RESULTS
 
 
 .result__row {
-  margin: 24px 0;
+  margin: 32px 0;
 }
 
 .movie__list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
 .movie__wrapper {
-  width: calc(100% / 3);
+  width: 25%;
+  margin-bottom: 32px;
 }
 
 .movie {
@@ -426,6 +430,7 @@ MOVIE RESULTS
 .movie__title {
   font-size: 24px;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .movie__release-date {
@@ -451,10 +456,7 @@ MOVIE RESULTS
 }
 
 .movie:hover .movie__title,
-.movie:hover .movie__release-date,
-.movie__title:hover .movie__title,
-.movie__title:hover .movie__release-date {
-  color:#375E97;
+.movie__title:hover .movie__title {
   transform: scale(1.1);
 }
 

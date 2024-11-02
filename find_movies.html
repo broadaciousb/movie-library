@@ -39,11 +39,14 @@
       <div class="search__header--content">
         <h2 class="serach__header--title">Explore our movie archive</h2>
         <div class="search__header-input--wrapper">
-          <input class="search__header-input" 
+          <input id="search__input" class="search__header-input" 
           type="text"
-          placeholder="Search by title">
+          placeholder="Search by title"
+          data-search>
           <div class="find__movies-search--icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <a href="" class="search__button" id="search__button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -54,12 +57,13 @@
       <div class="filter__row">
         <h3 class="filter__title">Movie Results</h3>
         <div class="drop-down__wrapper">
-          <label for="movies" class="drop-down__caption">Filter Results</label>
-          <select name="movies" id="movies" class="movie__filter">
+          <label for="movie__filter" class="drop-down__caption">Filter Results</label>
+          <select name="movies" id="movie_filter" 
+          class="movie__filter" onchange="filterMovies(event)">
             <option class="filter__option" value="all">All</option>
-            <option class="filter__option" value="comedy">Comedy</option>
-            <option class="filter__option" value="action">Action</option>
-            <option class="filter__option" value="drama">Drama</option>
+            <option class="filter__option" value="movie">Movie</option>
+            <option class="filter__option" value="series">Series</option>
+            <option class="filter__option" value="episode">Episode</option>
           </select>
         </div>
       </div>
