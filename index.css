@@ -331,10 +331,52 @@ header {
 /* SEARCH CONTAINER */
 
 .loading__bar {
+  position: relative;
   width: 100%;
   height: 5px;
   background-color: #375E97;
   opacity: 0.5;
+}
+
+.loading__hidden {
+  visibility: hidden;
+}
+
+.loading__bar--highlight {
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background-color: #FB6542;
+}
+
+.loading__bar--highlight-right {
+  left: -200px;
+  animation: loading-bar-right 1000ms infinite linear;
+}
+
+.loading__bar--highlight-left {
+  right: -200px;
+  animation: loading-bar-left 1000ms infinite linear;
+}
+
+@keyframes loading-bar-right {
+  0 {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(120vw)
+  }
+}
+
+@keyframes loading-bar-left {
+  0 {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-120vw)
+  }
 }
 
 .search__container {
@@ -405,6 +447,38 @@ MOVIE RESULTS
 
 .result__row {
   margin: 32px 0;
+  position: relative;
+}
+
+.result__overlay--loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 80px;
+  color: #375E97;
+  display: none;
+}
+
+.result__overlay--visible {
+  display: flex;
+}
+
+.fa-spinner {
+  animation: spinner 750ms infinite linear;
+}
+
+@keyframes spinner {
+  0 {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .movie__list {

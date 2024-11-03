@@ -42,7 +42,7 @@
           <input id="search__input" class="search__header-input" 
           type="text"
           placeholder="Search by title"
-          data-search>
+          data-search></input>
           <div class="find__movies-search--icon">
             <a href="" class="search__button" id="search__button">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -52,7 +52,9 @@
       </div>
       <div class="header__background"></div>
     </div>
-    <div class="loading__bar"></div>
+    <div class="loading__bar">
+      <div class="loading__bar--highlight loading__bar--highlight-right loading__hidden"></div>
+    </div>
     <div class="container search__container">
       <div class="filter__row">
         <h3 class="filter__title">Movie Results</h3>
@@ -68,35 +70,17 @@
         </div>
       </div>
     </div>
-    <div class="loading__bar"></div>
+    <div class="loading__bar">
+      <div class="loading__bar--highlight loading__bar--highlight-left loading__hidden"></div>
+    </div>
   </section>
   <section id="movie__results">
     <div class="result__row">
       <div class="movie__list">
-        <div class="movie__wrapper">
-          <div class="movie">
-            <div class="movie__img--wrapper">
-              <img src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__img">
-            </div>
-            <h3 class="movie__title">Movie Title</h3>
-          </div>
-        </div>
-        <div class="movie__wrapper">
-          <div class="movie">
-            <div class="movie__img--wrapper">
-              <img src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__img">
-            </div>
-            <h3 class="movie__title">Movie Title</h3>
-          </div>
-        </div>
-        <div class="movie__wrapper">
-          <div class="movie">
-            <div class="movie__img--wrapper">
-              <img src="https://m.media-amazon.com/images/M/MV5BNWE5MGI3MDctMmU5Ni00YzI2LWEzMTQtZGIyZDA5MzQzNDBhXkEyXkFqcGc@._V1_SX300.jpg" alt="" class="movie__img">
-            </div>
-            <h3 class="movie__title">Movie Title</h3>
-          </div>
-        </div>
+        
+      </div>
+      <div class="result__overlay--loading">
+        <i class="fas fa-spinner"></i>
       </div>
     </div>
   </section>

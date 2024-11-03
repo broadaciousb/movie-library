@@ -6,28 +6,30 @@ const movieAPI = `https://www.omdbapi.com/?i=tt3896198&apikey=f54b9d83`;
 
 var filter = ``;
 
-const tooManyResults = '<h3 class="too-many-results">Too many results, narrow your search please.</h3>';
+const tooManyResults =
+  '<h3 class="too-many-results">Too many results, narrow your search please.</h3>';
 
-const movieNotFound = '<h3 class="movie-not-found">Movie not found, try again.</h3>';
+const movieNotFound =
+  '<h3 class="movie-not-found">Movie not found, try again.</h3>';
+
+const loadingResults = document.querySelector(".result__overlay--loading");
+const loadingBar = document.querySelector(".loading__bar--highlight");
 
 function search() {
-  var newSearch = 'game'
+  var newSearch = "game";
   var newAPI = movieAPI + `&s=${newSearch}` + filter;
   main(newAPI);
 }
 
 function filterMovies(event) {
-  if (event.target.value === 'movie') {
-    filter = '&type=movie';
-  }
-  else if (event.target.value === 'series') {
-    filter = '&type=series';
-  }
-  else if (event.target.value === 'episode') {
-    filter = '&type=episode';
-  }
-  else {
-    filter = ''
+  if (event.target.value === "movie") {
+    filter = "&type=movie";
+  } else if (event.target.value === "series") {
+    filter = "&type=series";
+  } else if (event.target.value === "episode") {
+    filter = "&type=episode";
+  } else {
+    filter = "";
   }
   console.log(event.target.value);
   console.log(filter);
@@ -35,25 +37,28 @@ function filterMovies(event) {
 }
 
 async function main(API) {
+  loadingBar.classList.remove("loading__hidden");
+  loadingResults.classList += " result__overlay--visible";
   const movies = await fetch(API);
   const moviesData = await movies.json();
   console.log(moviesData);
-  if (moviesData.Error === 'Too many results.') {
-    movieListEl.innerHTML = tooManyResults;
-  }
-  else if (moviesData.Error === 'Movie not found!') {
-    movieListEl.innerHTML = movieNotFound;
-  }
-  else {
-    movieListEl.innerHTML = moviesData.Search.map((movie) => movieHTML(movie)).join("");
-  }
+
+  setTimeout(() => {
+    loadingResults.classList.remove("result__overlay--visible");
+    loadingBar.classList += " loading__hidden";
+    if (moviesData.Error === "Too many results.") {
+      movieListEl.innerHTML = tooManyResults;
+    } else if (moviesData.Error === "Movie not found!") {
+      movieListEl.innerHTML = movieNotFound;
+    } else {
+      movieListEl.innerHTML = moviesData.Search.map((movie) =>
+        movieHTML(movie)
+      ).join("");
+    }
+  }, 500);
 }
 
-
 search();
-
-
-
 
 function movieHTML(movie) {
   return `<div class="movie__wrapper">
