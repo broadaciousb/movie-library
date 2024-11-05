@@ -3,6 +3,8 @@
 
 const movieListEl = document.querySelector(".movie__list");
 const movieAPI = `https://www.omdbapi.com/?i=tt3896198&apikey=f54b9d83`;
+const searchInput = document.querySelector("#search__input");
+const searchButton = document.querySelector("#search__button");
 
 var filter = ``;
 
@@ -16,10 +18,19 @@ const loadingResults = document.querySelector(".result__overlay--loading");
 const loadingBar = document.querySelector(".loading__bar--highlight");
 
 function search() {
-  var newSearch = "game";
+  var newSearch = searchInput.value || "game";
   var newAPI = movieAPI + `&s=${newSearch}` + filter;
   main(newAPI);
 }
+
+searchButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  search();
+});
+
+searchInput.addEventListener("keypress", (e) => {
+  search();
+})
 
 function filterMovies(event) {
   if (event.target.value === "movie") {
