@@ -5,6 +5,8 @@ const movieListEl = document.querySelector(".movie__list");
 const movieAPI = `https://www.omdbapi.com/?i=tt3896198&apikey=f54b9d83`;
 const searchInput = document.querySelector("#search__input");
 const searchButton = document.querySelector("#search__button");
+const homeSearchInput = document.querySelector("#home-search__input");
+const homeSearchButton = document.querySelector("#home-search__button");
 
 var filter = ``;
 
@@ -17,20 +19,40 @@ const movieNotFound =
 const loadingResults = document.querySelector(".result__overlay--loading");
 const loadingBars = document.querySelectorAll(".loading__bar--highlight");
 
-function search() {
-  var newSearch = searchInput.value || "game";
+function search(userSearch) {
+  var newSearch = userSearch || "game";
   var newAPI = movieAPI + `&s=${newSearch}` + filter;
   main(newAPI);
 }
 
 searchButton.addEventListener("click", (e) => {
   e.preventDefault();
-  search();
+  search(searchInput.value);
 });
 
 searchInput.addEventListener("keypress", (e) => {
-  search();
-})
+  if (e.key === "Enter") {
+    search(searchInput.value);
+  }
+});
+
+function homeSearch(search) {
+  localStorage.setItem("search", search)
+  window.location.href = `${window.location.origin}/find_movies.html`;
+  search(localStorage.getItem("search"));
+  console.log("Home Search Function")
+};
+
+homeSearchButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  homeSearch(homeSearchInput.value);
+});
+
+homeSearchInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    homeSearch(homeSearchInput.value);
+  }
+});
 
 function filterMovies(event) {
   if (event.target.value === "movie") {
@@ -44,7 +66,7 @@ function filterMovies(event) {
   }
   console.log(event.target.value);
   console.log(filter);
-  search();
+  search(searchInput.value);
 }
 
 async function main(API) {
