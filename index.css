@@ -429,13 +429,10 @@ header {
   border-color: #FB6542;
 }
 
-.option {
-  border-color: #375E97;
+.movie__filter:focus {
+  outline: none;
 }
 
-.option:hover {
-  border-color: #FB6542;
-}
 
 
 /*

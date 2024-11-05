@@ -15,7 +15,7 @@ const movieNotFound =
   '<h3 class="movie-not-found">Movie not found, try again.</h3>';
 
 const loadingResults = document.querySelector(".result__overlay--loading");
-const loadingBar = document.querySelector(".loading__bar--highlight");
+const loadingBars = document.querySelectorAll(".loading__bar--highlight");
 
 function search() {
   var newSearch = searchInput.value || "game";
@@ -48,15 +48,17 @@ function filterMovies(event) {
 }
 
 async function main(API) {
-  loadingBar.classList.remove("loading__hidden");
+  loadingBars.forEach(bar => bar.classList.remove("loading__hidden"));
   loadingResults.classList += " result__overlay--visible";
+
+
   const movies = await fetch(API);
   const moviesData = await movies.json();
   console.log(moviesData);
 
   setTimeout(() => {
     loadingResults.classList.remove("result__overlay--visible");
-    loadingBar.classList += " loading__hidden";
+    loadingBars.forEach(bar => bar.classList.add("loading__hidden"))
     if (moviesData.Error === "Too many results.") {
       movieListEl.innerHTML = tooManyResults;
     } else if (moviesData.Error === "Movie not found!") {
