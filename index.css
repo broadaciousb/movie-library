@@ -414,7 +414,7 @@ header {
   align-items: center;
 }
 
-.serach__header--title {
+.search__header--title {
   color: white;
   font-size: 45px;
   margin: 32px 0;
@@ -671,4 +671,83 @@ MOVIE RESULTS
   justify-content: center;
   align-items: center;
   width: 100%;
+}
+
+
+
+/* Small phones, tablets, large smart phones */
+@media (max-width: 768px) {
+  .header__title {
+    font-size: 40px;
+  }
+
+  .header__sub-title {
+    font-size: 28px;
+  }
+
+  .header__img--wrapper {
+    width: 50%;
+  }
+
+  .movie__wrapper {
+    width: calc(100% / 3);
+  }
+
+  .movie__title {
+    font-size: 20px;
+  }
+
+  .result__overlay--loading {
+    font-size: 50px;
+    top: -10%;
+  }
+}
+
+
+
+/* Small Phones */
+@media (max-width: 660px) {
+  nav {
+    margin-bottom: 40px;
+  }
+
+  .nav__content-wrapper {
+    flex-direction: column;
+  }
+
+  .nav__logo,
+  .nav__logo--white {
+    margin: 32px 0;
+  }
+
+  .nav__contact {
+    margin: 0;
+  }
+
+  .header__title {
+    font-size: 32px;
+  }
+
+  .header__sub-title {
+    font-size: 24px;
+  }
+
+  .movie__wrapper {
+    width: 50%;
+  }
+
+  .result__overlay--loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 80px;
+  }
+
+  .search__header--content {
+    margin: 0 24px;
+  }
+
+  .search__header--title {
+    font-size: 32px;
+  }
 }
