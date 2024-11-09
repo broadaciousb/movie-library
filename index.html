@@ -12,27 +12,33 @@
 
 <body>
   <section id="home-page">
-    <nav>
+    <nav class="">
       <div class="nav__content-wrapper">
         <div class="logo nav__logo">
           <i class="fa-solid fa-video"></i>
           MovArch
         </div>
-        <div class="nav__links">
-          <a href="" class="nav__link link__hover-effect">
-            Home
-          </a>
-          <a href="find_movies.html" class="nav__link link__hover-effect">
-            Find Movies
-          </a>
-          <a href="" class="nav__contact button__hover-effect">
-            Contact
-          </a>
-        </div>
+        <ul class="nav__links">
+          <li>
+            <a href="" class="nav__link link__hover-effect">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="find_movies.html" class="nav__link link__hover-effect">
+              Find Movies
+            </a>
+          </li>
+          <li onclick="toggleModal()">
+            <a href="" class="nav__contact button__hover-effect">
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
     <div class="container">
-      <header>
+      <header class="">
         <div class="header__content">
           <h1 class="header__title deep-blue">
             One place where you can find any movie that was ever made.
@@ -51,6 +57,32 @@
           </div>
         </div>
       </header>
+    </div>
+    <div class="modal display-none">
+      <div class="modal__content">
+        <h3 class="modal__title">Do you want your website to look like this one?</h3>
+        <h2 class="modal__sub-title">Please let me know!</h2>
+        <form class="modal__form" action="">
+          <div class="form-item">
+            <label class="form-item__label">Name:</label>
+            <input type="text" class="form__input" name="user_name" required></input>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">Email:</label>
+            <input type="email" class="form__input" name="user_email" required></input>
+          </div>
+          <div class="form-item">
+            <label class="form-item__label">Message:</label>
+            <textarea type="textarea" class="form__textarea" name="message" required></textarea>
+          </div>
+          <button id="form__submit" class="form__submit">
+            Send it
+          </button>
+        </form>
+      </div>
+      <a class="modal__close-button" onclick="toggleModal()">
+        <i class="fas fa-times"></i>
+      </a>
     </div>
   </section>
 </body>

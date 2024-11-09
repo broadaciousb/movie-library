@@ -8,8 +8,17 @@
   transition: all 300ms ease;
 }
 
+li {
+  list-style-type: none;
+}
+
 a {
   text-decoration: none;
+}
+
+
+.display-none {
+  display: none;
 }
 
 .container {
@@ -73,6 +82,7 @@ HOME PAGE
 
 #home-page {
   min-height: 100vh;
+  position: relative;
 }
 
 nav {
@@ -241,6 +251,121 @@ header {
 
 .header__img {
   width: 100%;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #375E97;
+  height: 80vh;
+  border-radius: 24px;
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 24px;
+}
+
+.modal__title,
+.modal__sub-title,
+.form-item__label {
+  color: white;
+}
+
+.modal__title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.modal__sub-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__close-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-size: 32px;
+  color: white;
+}
+
+.modal__close-button:hover {
+  color:#FFBB00;
+}
+
+.modal__close-button:after {
+  color:#FB6542;
+}
+
+.form__input, .form__textarea {
+  width: 100%;
+  height: 40px;
+  background-color: #375E97;
+  outline: none;
+  color: white;
+  border: 3px solid white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  transition: all 300ms ease;
+}
+
+.form__input:hover, .form__textarea:hover {
+  border-color:#FFBB00;
+}
+
+
+.form__input:focus, .form__textarea:focus {
+  border-color:#FB6542;
+}
+
+.form__textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+
+.form-item {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.form-item__label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.form__submit {
+  width: 100%;
+  max-width: 240px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px 24px;
+  color:#375E97;
+  background-color: white;
+  border: 2px solid #375E97;
+}
+
+.form__submit:hover {
+  border-color: white;
+  background-color: #375E97;
+  color: white;
+}
+
+.form__submit:active {
+  border-color:#FB6542;
+  color:#FB6542;
 }
 
 
