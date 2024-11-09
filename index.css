@@ -196,6 +196,7 @@ header {
 
 .header__title {
   font-size: 50px;
+  margin: 24px 0;
 }
 
 .header__sub-title {
@@ -210,6 +211,7 @@ header {
   align-items: center;
   width: 100%;
   max-width: 800px;
+  margin-bottom: 12px;
 }
 
 .search__input {
@@ -245,7 +247,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 40%;
   margin-top: 36px;
 }
 
@@ -610,13 +612,11 @@ MOVIE RESULTS
   position: relative;
 }
 
-.too-many-results,
-.movie-not-found {
-  position: absolute;
-  top: 50%;
+.error__message {
+  position: fixed;
+  top: 70%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 24px;
+  transform: translate(-50%, -70%);
   font-size: 32px;
 }
 

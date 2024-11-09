@@ -9,13 +9,13 @@ const homeSearch = localStorage.getItem("search");
 
 var filter = ``;
 
-const enterSearch = '<h3 class="too-many-results">Please enter something</h3>';
+const enterSearch = '<h3 class="error__message too-many-results">Please enter something</h3>';
 
 const tooManyResults =
-  '<h3 class="too-many-results">Too many results, narrow your search please.</h3>';
+  '<h3 class="error__message too-many-results">Too many results, narrow your search please.</h3>';
 
 const movieNotFound =
-  '<h3 class="movie-not-found">Movie not found, try again.</h3>';
+  '<h3 class="error__message movie-not-found">Movie not found, try again.</h3>';
 
 const loadingResults = document.querySelector(".result__overlay--loading");
 const loadingBars = document.querySelectorAll(".loading__bar--highlight");
