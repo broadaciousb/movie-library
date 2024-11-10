@@ -2,7 +2,7 @@ const contactButton = document.querySelector(".nav__contact");
 let isModalOpen = false;
 const homeSearchInput = document.querySelector("#home-search__input");
 const homeSearchButton = document.querySelector("#home-search__button");
-const modal = document.querySelector(".modal");
+const modal = document.querySelector("#modal");
 const nav = document.querySelector("nav");
 const header = document.querySelector("header");
 
@@ -25,13 +25,13 @@ homeSearchInput.addEventListener("keypress", (e) => {
 function toggleModal() {
   if (isModalOpen) {
     isModalOpen = false;
-    document.modal.classList.add(" display-none");
+    document.modal.classList.add("display-none");
     document.nav.classList.remove("display-none");
     document.header.classList.remove("display-none");
   } else {
     isModalOpen = true;
     document.modal.classList.remove("display-none");
-    document.nav.classList.add(" display-none");
+    document.nav.classList.add("display-none");
     document.header.classList.add("display-none");
   }
 }
