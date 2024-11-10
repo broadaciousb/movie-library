@@ -25,13 +25,13 @@ homeSearchInput.addEventListener("keypress", (e) => {
 function toggleModal() {
   if (isModalOpen) {
     isModalOpen = false;
-    document.modal.classList += " display-none";
+    document.modal.classList.add(" display-none");
     document.nav.classList.remove("display-none");
     document.header.classList.remove("display-none");
   } else {
     isModalOpen = true;
     document.modal.classList.remove("display-none");
-    document.nav.classList += " display-none";
-    document.header.classList += " display-none";
+    document.nav.classList.add(" display-none");
+    document.header.classList.add("display-none");
   }
 }
