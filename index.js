@@ -37,12 +37,13 @@ function toggleModal() {
 }
 
 function contact(event) {
-  preventDefault()
-  emailjs
-  .sendForm(
-    'service_e3qqtcf',
-    'template_2tit16r',
+  event.preventDefault();
+
+  emailjs.sendForm(
+    "service_e3qqtcf",
+    "template_2tit16r",
     event.target,
-    '6G_F_yg7CUVy-kc9W'
-  )
+    "6G_F_yg7CUVy-kc9W"
+  );
+  console.log("Contact Function");
 }
