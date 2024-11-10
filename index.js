@@ -35,3 +35,14 @@ function toggleModal() {
     document.header.classList.add("display-none");
   }
 }
+
+function contact(event) {
+  preventDefault()
+  emailjs
+  .sendForm(
+    'service_e3qqtcf',
+    'template_2tit16r',
+    event.target,
+    '6G_F_yg7CUVy-kc9W'
+  )
+}
