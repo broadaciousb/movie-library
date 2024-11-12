@@ -862,6 +862,11 @@ MOVIE RESULTS
     margin: 0;
   }
 
+  .modal__close-button {
+    bottom: 6px;
+    right: 6px;
+  }
+
 
 }
 
