@@ -784,7 +784,7 @@ MOVIE RESULTS
 
 
 
-/* Small Phones */
+/* Medium-Small Phones */
 @media (max-width: 660px) {
   nav {
     margin-bottom: 40px;
@@ -844,3 +844,24 @@ MOVIE RESULTS
     font-size: 32px;
   }
 }
+
+
+/* Small Phones*/
+@media (max-width: 480px) {
+  .nav__links {
+    justify-content: center;
+  }
+
+  .nav__link,
+  .nav__link--white {
+    display: none;
+  }
+
+  .nav__contact,
+  .nav__contact--white {
+    margin: 0;
+  }
+
+
+}
+
