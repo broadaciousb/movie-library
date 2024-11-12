@@ -753,6 +753,33 @@ MOVIE RESULTS
     font-size: 50px;
     top: -10%;
   }
+
+  .modal__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .modal__sub-title {
+    font-size: 20px;
+  }
+
+  .form-item {
+    margin-bottom: 20px;
+  }
+
+  .form__textarea {
+    height: 50px;
+  }
+
+  .form__submit {
+    max-width: 140px;
+    font-size: 20px;
+  }
+
+  .modal__close-button {
+    bottom: 12px;
+    right: 12px;
+  }
 }
 
 
