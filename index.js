@@ -38,12 +38,26 @@ function toggleModal() {
 
 function contact(event) {
   event.preventDefault();
+  const overlayLoading = document.querySelector(".modal__overlay");
+  overlayLoading.classList.remove("display-none");
 
   emailjs.sendForm(
     "service_e3qqtcf",
     "template_2tit16r",
     event.target,
     "6G_F_yg7CUVy-kc9W"
-  );
+  )
+  .then(() => {
+    overlayLoading.classList.add("display-none");
+    toggleModal();
+  })
+  .catch(() => {
+    overlayLoading.classList.add("display-none");
+    toggleModal();
+    alert(
+      "The email service is temporarily unavailable. Please contact me directly on broadybmx@gmail.com."
+    );
+  });
+  ;
   console.log("Contact Function");
 }

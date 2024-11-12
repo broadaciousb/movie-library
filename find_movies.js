@@ -6,6 +6,13 @@ const movieAPI = `https://www.omdbapi.com/?i=tt3896198&apikey=f54b9d83`;
 const searchInput = document.querySelector("#search__input");
 const searchButton = document.querySelector("#search__button");
 const homeSearch = localStorage.getItem("search");
+const loadingResults = document.querySelector(".result__overlay--loading");
+const loadingBars = document.querySelectorAll(".loading__bar--highlight");
+let isModalOpen = false;
+const modal = document.querySelector("#modal");
+const nav = document.querySelector("nav");
+const searchPage = document.querySelector("#search__page");
+const movieResults = document.querySelector("#movie__results");
 
 var filter = ``;
 
@@ -17,8 +24,7 @@ const tooManyResults =
 const movieNotFound =
   '<h3 class="error__message movie-not-found">Movie not found, try again.</h3>';
 
-const loadingResults = document.querySelector(".result__overlay--loading");
-const loadingBars = document.querySelectorAll(".loading__bar--highlight");
+
 
 function search(userSearch) {
   var newSearch = userSearch;
@@ -89,4 +95,45 @@ function movieHTML(movie) {
 if (homeSearch) {
   search(homeSearch);
   localStorage.removeItem("search");
+}
+
+
+function toggleModal() {
+  if (isModalOpen) {
+    isModalOpen = false;
+    modal.classList.add("display-none");
+    searchPage.classList.remove("display-none");
+    movieResults.classList.remove("display-none");
+  } else {
+    isModalOpen = true;
+    modal.classList.remove("display-none");
+    searchPage.classList.add("display-none");
+    movieResults.classList.add("display-none");
+  }
+}
+
+function contact(event) {
+  event.preventDefault();
+  const overlayLoading = document.querySelector(".modal__overlay");
+  overlayLoading.classList.remove("display-none");
+
+  emailjs.sendForm(
+    "service_e3qqtcf",
+    "template_2tit16r",
+    event.target,
+    "6G_F_yg7CUVy-kc9W"
+  )
+  .then(() => {
+    overlayLoading.classList.add("display-none");
+    toggleModal();
+  })
+  .catch(() => {
+    overlayLoading.classList.add("display-none");
+    toggleModal();
+    alert(
+      "The email service is temporarily unavailable. Please contact me directly on broadybmx@gmail.com."
+    );
+  });
+  ;
+  console.log("Contact Function");
 }

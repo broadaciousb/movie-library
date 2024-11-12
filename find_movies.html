@@ -8,6 +8,18 @@
   <script src="https://kit.fontawesome.com/a9dfca619b.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css">
   <script src="./find_movies.js" defer></script>
+  
+  <!-- Script below must be at the end of head element -->
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "6G_F_yg7CUVy-kc9W",
+      });
+   })();
+</script>
 </head>
 
 <body>
@@ -19,20 +31,28 @@
             <i class="fa-solid fa-video"></i>
             MovArch
           </div>
-          <div class="nav__links">
-            <a href="index.html" class="nav__link--white
-            link__hover-effect 
-            link__hover-effect--white">
-              Home
-            </a>
-            <a href="" class="nav__link--white
-            link__hover-effect 
-            link__hover-effect--white">
-              Find Movies
-            </a>
-            <a href="#" class="nav__contact--white button__hover-effect">
-              Contact
-            </a>
+          <div>
+            <ul class="nav__links">
+              <li>
+                <a href="index.html" class="nav__link--white
+                link__hover-effect 
+                link__hover-effect--white">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="" class="nav__link--white
+                link__hover-effect 
+                link__hover-effect--white">
+                  Find Movies
+                </a>
+              </li>
+              <li href="#" onclick="toggleModal()">
+                <a href="#" class="nav__contact--white button__hover-effect">
+                  Contact
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -84,6 +104,37 @@
       </div>
     </div>
   </section>
+  <div id="modal" class="modal display-none">
+    <div class="modal__content">
+      <h3 class="modal__title">Do you want your website to look like this one?</h3>
+      <h2 class="modal__sub-title">Please let me know!</h2>
+      <form class="modal__form" onsubmit="contact(event)">
+        <div class="form-item">
+          <label class="form-item__label">Name:</label>
+          <input type="text" class="form__input" name="user_name" required></input>
+        </div>
+        <div class="form-item">
+          <label class="form-item__label">Email:</label>
+          <input type="email" class="form__input" name="user_email" required></input>
+        </div>
+        <div class="form-item">
+          <label class="form-item__label">Message:</label>
+          <textarea type="textarea" class="form__textarea" name="message" required></textarea>
+        </div>
+        <button id="form__submit" class="form__submit">
+          Send it
+        </button>
+      </form>
+    </div>
+    <a href="#" class="modal__close-button" onclick="toggleModal()">
+      <i class="fas fa-times"></i>
+    </a>
+    <div class="modal__overlay display-none">
+      <div class="modal__overlay--container">
+        <h3 class="modal__overlay--caption">Thanks for reaching out! I will contact you soon.</h3>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
