@@ -921,5 +921,17 @@ MOVIE RESULTS
     display: flex;
   }
 
-}
+  .modal__sub-title {
+    margin-bottom: 20px;
+  }
 
+  .form-item {
+    margin-bottom: 12px;
+  }
+
+  .form__submit {
+    font-size: 20px;
+    padding: 12px 40px;
+  }
+
+}
