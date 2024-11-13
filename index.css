@@ -83,6 +83,15 @@ a {
   }
 }
 
+@keyframes modal-slide {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 
 
 
@@ -186,6 +195,63 @@ nav {
   color: white;
 }
 
+.nav__link--button {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color:#375E97;
+}
+
+.nav__button--white {
+  color: white;
+}
+
+.nav__link--button:hover {
+  color:#FB6542;
+}
+
+
+/* Nav for small phones */
+.nav__modal {
+  position: fixed;
+  background-color:lightgray;
+  top: 3%;
+  left: 4%;
+  right: 4%;
+  bottom: 10%;
+  border: 3px solid black;
+  border-radius: 24px;
+  align-items: center;
+  justify-content: center;
+  animation: modal-slide 400ms ease;
+}
+
+
+
+.nav__modal--links {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.nav__modal--close {
+  position: fixed;
+  top: 7%;
+  right: 10%;
+  font-size: 32px;
+  color: black;
+}
+
+.nav__modal--close:hover {
+  color:#375E97;
+}
+
+
+
 
 /*
 
@@ -279,12 +345,15 @@ header {
 
 .modal {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 10%;
   background-color: #375E97;
   border-radius: 24px;
   overflow: hidden;
+  z-index: 100;
+  animation: modal-slide 400ms ease;
 }
 
 .modal__content {
@@ -327,7 +396,7 @@ header {
 
 .modal__sub-title {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
 .modal__form {
@@ -338,8 +407,8 @@ header {
 
 .modal__close-button {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 12%;
+  right: 8%;
   font-size: 32px;
   color: white;
 }
@@ -382,7 +451,8 @@ header {
 
 .form-item {
   width: 100%;
-  margin-bottom: 40px;
+  max-width: 800px;
+  margin-bottom: 60px;
 }
 
 .form-item__label {
@@ -762,24 +832,6 @@ MOVIE RESULTS
   .modal__sub-title {
     font-size: 20px;
   }
-
-  .form-item {
-    margin-bottom: 20px;
-  }
-
-  .form__textarea {
-    height: 50px;
-  }
-
-  .form__submit {
-    max-width: 140px;
-    font-size: 20px;
-  }
-
-  .modal__close-button {
-    bottom: 12px;
-    right: 12px;
-  }
 }
 
 
@@ -843,30 +895,31 @@ MOVIE RESULTS
   .home__search--icon {
     font-size: 32px;
   }
+
 }
 
 
 /* Small Phones*/
 @media (max-width: 480px) {
   .nav__links {
-    justify-content: center;
-  }
-
-  .nav__link,
-  .nav__link--white {
     display: none;
   }
 
-  .nav__contact,
-  .nav__contact--white {
-    margin: 0;
+  .nav__link {
+    font-size: 40px;
   }
 
-  .modal__close-button {
-    bottom: 6px;
-    right: 6px;
+  .nav__contact {
+    font-size: 40px;
   }
 
+  .nav__content-wrapper {
+    flex-direction: row;
+  }
+
+  .nav__link--button {
+    display: flex;
+  }
 
 }
 

@@ -1,10 +1,12 @@
 const contactButton = document.querySelector(".nav__contact");
 let isModalOpen = false;
+let isNavModalOpen = false;
 const homeSearchInput = document.querySelector("#home-search__input");
 const homeSearchButton = document.querySelector("#home-search__button");
 const modal = document.querySelector("#modal");
 const nav = document.querySelector("nav");
 const header = document.querySelector("header");
+const navModal = document.querySelector(".nav__modal");
 
 function homeSearch(search) {
   localStorage.setItem("search", search);
@@ -33,6 +35,18 @@ function toggleModal() {
     modal.classList.remove("display-none");
     nav.classList.add("display-none");
     header.classList.add("display-none");
+  }
+}
+
+function toggleNavModal() {
+  if (isNavModalOpen) {
+    isNavModalOpen = false;
+    navModal.classList.remove("display-none");
+  }
+
+  else {
+    isNavModalOpen = true;
+    navModal.classList.add("display-none");
   }
 }
 

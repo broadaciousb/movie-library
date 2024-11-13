@@ -9,8 +9,10 @@ const homeSearch = localStorage.getItem("search");
 const loadingResults = document.querySelector(".result__overlay--loading");
 const loadingBars = document.querySelectorAll(".loading__bar--highlight");
 let isModalOpen = false;
+let isNavModalOpen = false;
 const modal = document.querySelector("#modal");
 const nav = document.querySelector("nav");
+const navModal = document.querySelector(".nav__modal");
 const searchPage = document.querySelector("#search__page");
 const movieResults = document.querySelector("#movie__results");
 
@@ -109,6 +111,18 @@ function toggleModal() {
     modal.classList.remove("display-none");
     searchPage.classList.add("display-none");
     movieResults.classList.add("display-none");
+  }
+}
+
+function toggleNavModal() {
+  if (isNavModalOpen) {
+    isNavModalOpen = false;
+    navModal.classList.remove("display-none");
+  }
+
+  else {
+    isNavModalOpen = true;
+    navModal.classList.add("display-none");
   }
 }
 
